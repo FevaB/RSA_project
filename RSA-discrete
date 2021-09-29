@@ -56,13 +56,13 @@ def gcd(number_1, number_2):
 def public_key(p, q):
     phi_n = (p - 1) * (q - 1)
 
-    e = random.randint(99999999, 999999999999)
+    e = random.randint(99999, 999999999)
 
     isfound = True
     while isfound:
         gcd_req = gcd(phi_n, e)
         if gcd_req != 1:
-            e = random.randint(99999999, 999999999999)
+            e = random.randint(99999, 999999999)
         elif gcd_req == 1:
             isfound = False
             break
@@ -149,5 +149,5 @@ elif choice == '3':
 
     n = int((public_keysfile.readline()).split('public_n:')[1])
 
-    file = input('enter file to be encrypted')
+    file = input('enter file to be decrypted')
     decrypt(file, d,n)
